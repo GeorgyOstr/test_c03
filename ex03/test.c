@@ -6,26 +6,26 @@
 /*   By: gostroum <gostroum@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 18:51:48 by gostroum          #+#    #+#             */
-/*   Updated: 2025/01/15 21:25:04 by gostroum         ###   ########.fr       */
+/*   Updated: 2025/01/15 22:59:09 by gostroum         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdio.h>
 
-char	*ft_strcat(char *dest, char *src);
+char	*ft_strncat(char *dest, char *src, unsigned int n);
 
-void	ft_test(char *dest, char *src)
+void	ft_test(char *dest, char *src, unsigned int n)
 { 
 	printf("Dest: %s, src: %s,", dest, src);
-	ft_strcat(dest, src);
+	ft_strncat(dest, src);
 	printf(" After ft_strcat - Dest: %s, src %s\n", dest, src);
 }
 
-void	test(char *dest, char *src)
+void	test(char *dest, char *src, unsigned int n)
 { 
 	printf("Dest: %s, src: %s,", dest, src);
-	strcat(dest, src);
+	strncat(dest, src);
 	printf(" After strcat - Dest: %s, src %s\n", dest, src);
 }
 
@@ -34,8 +34,8 @@ int	main(void)
 	 
 	char dest[100] = "destanation";
 	char src[20] = "source";
-	test(dest, src);
-	ft_test(dest, src);
+	test(dest, src, 4);
+	ft_test(dest, src, 5);
 	//ft_test("Source", "Destanation");
 	//test("Data", "") ;
 	//ft_test("Data", "");
@@ -46,4 +46,4 @@ int	main(void)
 	//test("hihi", "Hello");
 	//ft_test("hihi", "Hello");
 	return (0);	
-}
+}		
